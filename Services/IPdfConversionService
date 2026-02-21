@@ -1,0 +1,19 @@
+namespace WordToPdfApi.Services;
+
+public interface IPdfConversionService
+{
+    /// <summary>
+    /// Convert Word document to PDF using LibreOffice
+    /// </summary>
+    Task ConvertToPdfAsync(string inputDocPath, string outputPdfPath);
+
+    /// <summary>
+    /// Check if LibreOffice is installed
+    /// </summary>
+    Task<bool> IsLibreOfficeAvailableAsync();
+
+    /// <summary>
+    /// Get the path to LibreOffice executable
+    /// </summary>
+    string GetLibreOfficePath();
+}
